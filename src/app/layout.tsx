@@ -16,6 +16,10 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "SiteKick.app - AI-Powered Business Growth Tools",
+  //logo
+  icons: {
+    icon: "/l.png",
+  },
   description:
     "Grow your small business with AI chatbots, 5-star review boosters, and instant analytics. No coding required. Start your 14-day free trial today.",
 };
@@ -26,7 +30,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" data-theme="light">
+    <html lang="en" data-theme="dim">
+      <head>
+        <link rel="icon" href="/l.png" />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}
       >
