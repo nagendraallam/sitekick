@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import {
-  FaRocket,
   FaFacebook,
   FaInstagram,
   FaLinkedin,

@@ -159,8 +159,8 @@ const Hero = () => {
                   </div>
                   <div className="flex-1 bg-primary/10 rounded-2xl rounded-tl-md p-4">
                     <p className="text-sm text-base-content">
-                      Hi! 👋 I noticed you're browsing our products. Need help
-                      finding the perfect solution?
+                      Hi! 👋 I noticed you&apos;re browsing our products. Need
+                      help finding the perfect solution?
                     </p>
                   </div>
                 </div>
@@ -168,7 +168,7 @@ const Hero = () => {
                 <div className="flex items-start gap-3 justify-end">
                   <div className="flex-1 bg-base-300/50 rounded-2xl rounded-tr-md p-4 max-w-xs ml-12">
                     <p className="text-sm text-base-content">
-                      Yes! I'm looking for something to increase my website
+                      Yes! I&apos;m looking for something to increase my website
                       conversions.
                     </p>
                   </div>
@@ -183,9 +183,9 @@ const Hero = () => {
                   </div>
                   <div className="flex-1 bg-primary/10 rounded-2xl rounded-tl-md p-4">
                     <p className="text-sm text-base-content">
-                      Perfect! Based on your site, I'd recommend our conversion
-                      optimization package. It includes smart pop-ups and lead
-                      capture forms. Would you like a free demo?
+                      Perfect! Based on your site, I&apos;d recommend our
+                      conversion optimization package. It includes smart pop-ups
+                      and lead capture forms. Would you like a free demo?
                     </p>
                     <div className="mt-3 flex gap-2">
                       <button className="btn btn-primary btn-xs">

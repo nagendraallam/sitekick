@@ -243,10 +243,10 @@ const Pricing = () => {
             </h3>
             <p className="text-base-content/70 mb-6 leading-relaxed">
               Enterprise solutions, custom integrations, or higher query limits?
-              Let's build the perfect plan for your business needs.
+              Let&apos;s build the perfect plan for your business needs.
             </p>
             <button className="btn btn-outline btn-accent btn-lg rounded-md hover:scale-105 transition-all duration-300">
-              <span>Let's Talk Custom Plans</span>
+              <span>Let&apos;s Talk Custom Plans</span>
               <svg
                 className="w-5 h-5 ml-2"
                 fill="none"
@@ -276,9 +276,10 @@ const Pricing = () => {
                 What happens if I exceed the 10,000 query limit?
               </h4>
               <p className="text-base-content/70">
-                No worries! Your chatbot keeps working. We'll simply charge
+                No worries! Your chatbot keeps working. We&apos;ll simply charge
                 €0.01 per additional query, billed at the end of your monthly
-                cycle. You'll get notifications when approaching your limit.
+                cycle. You&apos;ll get notifications when approaching your
+                limit.
               </p>
             </div>
 
