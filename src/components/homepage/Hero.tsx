@@ -10,7 +10,7 @@ const Hero = () => {
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-accent/3 rounded-full blur-3xl"></div>
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-4  sm:pt-20 pt-10  pb-8">
+      <div className="relative max-w-7xl mx-auto px-4  pt-20  pb-8">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center min-h-[80vh]">
           {/* Left side - Content */}
           <div className="space-y-8 text-center lg:text-left">
@@ -32,14 +32,15 @@ const Hero = () => {
                 <span className="text-3xl sm:text-4xl lg:text-5xl font-black text-base-content">
                   Instantly
                 </span>
-                <div className="text-3xl animate-bounce">🚀</div>
+                <div className="text-6xl ">🚀</div>
               </div>
             </div>
 
             {/* Supporting line */}
             <p className="text-xl leading-relaxed text-base-content/70 max-w-2xl font-medium">
-              SiteKick supercharges your website with AI chatbots, lead capture,
-              and smart conversion tools
+              SiteKick supercharges your website with AI chatbots,
+              <br />
+              lead capture, and smart conversion tools
               <br />
               <span className="text-primary font-semibold">
                 {" "}
@@ -95,7 +96,7 @@ const Hero = () => {
             {/* CTA buttons - Enhanced */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
               <button className="group btn btn-secondary btn-lg rounded-md text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-                <span>Add SiteKick to My Site</span>
+                <span>Get your SiteKick</span>
                 <svg
                   className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform"
                   fill="none"
@@ -136,7 +137,7 @@ const Hero = () => {
           {/* Right side - Enhanced mockup */}
           <div className="relative">
             {/* Main mockup container */}
-            <div className="relative bg-gradient-to-br from-base-100 to-base-200 rounded-3xl p-8 shadow-2xl border border-base-300/50 backdrop-blur-sm">
+            <div className="relative bg-gradient-to-br from-base-100 to-base-200 rounded-3xl p-8 shadow-4xl border border-base-300/50 backdrop-blur-sm">
               {/* Browser-like header */}
               <div className="flex items-center gap-2 mb-6 pb-4 border-b border-base-300/50">
                 <div className="flex gap-2">
@@ -206,8 +207,8 @@ const Hero = () => {
             </div>
 
             {/* Background decorative elements for mockup */}
-            <div className="absolute -z-10 top-4 right-4 w-32 h-32 bg-primary/10 rounded-full blur-2xl"></div>
-            <div className="absolute -z-10 bottom-4 left-4 w-24 h-24 bg-secondary/10 rounded-full blur-xl"></div>
+            <div className="absolute -z-10 top-0 right-0 w-44 h-44 bg-primary/50 rounded-full blur-2xl"></div>
+            <div className="absolute -z-10 -bottom-4 -left-4 w-44 h-44 bg-secondary/50 rounded-full blur-xl"></div>
           </div>
         </div>
       </div>

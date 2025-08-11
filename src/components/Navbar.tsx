@@ -7,7 +7,7 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <div className="navbar flex justify-between items-center fixed  bg-white/80 w-[80%]  left-1/2 -translate-x-1/2 px-8  top-2  rounded-md right-0 z-50 font-semibold text-black backdrop-blur-lg border-b border-base-300/20 shadow-sm">
+    <div className="navbar flex justify-between items-center px-8 py-4 bg-transparent absolute top-0 left-0 right-0 z-50">
       {" "}
       <div className="flex justify-between items-center">
         {/* Logo */}

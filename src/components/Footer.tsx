@@ -28,7 +28,7 @@ export default function Footer() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
             {/* Company Info */}
             <div className="lg:col-span-2">
-              <div className="flex items-center gap-3 mb-6">
+              <div className="flex items-center  gap-3 mb-6 bg-white w-fit rounded-lg p-4 shadow-lg ">
                 <Image
                   src="/l.png"
                   alt="SiteKick Logo"
@@ -67,16 +67,16 @@ export default function Footer() {
                 <div className="flex items-center gap-3 text-base-content/70">
                   <FaPhone className="text-primary" />
                   <a
-                    href="tel:+1234567890"
+                    href="tel:+353892530342"
                     className="hover:text-primary transition-colors"
                   >
-                    +1 (234) 567-890
+                    +353 (089) 253 0342
                   </a>
                 </div>
-                <div className="flex items-center gap-3 text-base-content/70">
+                {/* <div className="flex items-center gap-3 text-base-content/70">
                   <FaMapMarkerAlt className="text-primary" />
-                  <span>San Francisco, CA</span>
-                </div>
+                  <span>Dublin, Ireland</span>
+                </div> */}
               </div>
             </div>
             <div>
