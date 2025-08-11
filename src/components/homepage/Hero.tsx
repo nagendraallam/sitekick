@@ -30,7 +30,7 @@ const Hero = () => {
               </h1>
               <div className="flex items-center justify-center lg:justify-start gap-3">
                 <span className="text-3xl sm:text-4xl lg:text-5xl font-black text-base-content">
-                  Instantly
+                  INSTANTLY
                 </span>
                 <div className="text-6xl ">🚀</div>
               </div>

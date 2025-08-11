@@ -16,12 +16,18 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "SiteKick.app - AI-Powered Business Growth Tools",
-  //logo
-  icons: {
-    icon: "/l.png",
-  },
   description:
     "Grow your small business with AI chatbots, 5-star review boosters, and instant analytics. No coding required. Start your 14-day free trial today.",
+  icons: {
+    icon: [
+      {
+        url: "/l.png",
+        type: "image/png",
+      },
+    ],
+    shortcut: "/l.png",
+    apple: "/l.png",
+  },
 };
 
 export default function RootLayout({
@@ -31,9 +37,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" data-theme="corporate">
-      <head>
-        <link rel="icon" href="/l.png" />
-      </head>
+      <head></head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}
       >

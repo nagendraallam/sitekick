@@ -111,8 +111,8 @@ const Features = () => {
           {/* Card 2: Multi-channel Integration */}
           <div className="group relative bg-gradient-to-br from-base-100 to-base-200/50 rounded-3xl p-8 border border-secondary/30 hover:border-secondary/30 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 backdrop-blur-sm">
             {/* Card Header */}
-            <div className="relative mb-8">
-              <div className="w-16 h-16 bg-secondary/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+            <div className="relative mb-6">
+              <div className="w-14 h-14 lg:w-16 lg:h-16 bg-secondary/10 rounded-2xl flex items-center justify-center mb-4 lg:mb-6 group-hover:scale-110 transition-transform duration-300">
                 <svg
                   className="w-8 h-8 text-secondary"
                   fill="none"
@@ -127,7 +127,7 @@ const Features = () => {
                   />
                 </svg>
               </div>
-              <h3 className="text-2xl font-bold text-base-content mb-3">
+              <h3 className="text-xl lg:text-2xl font-bold text-base-content mb-2 lg:mb-3">
                 Multi-Channel Integration
               </h3>
               <p className="text-base-content/70 leading-relaxed">
@@ -190,10 +190,10 @@ const Features = () => {
           </div>
 
           {/* Card 3: Analytics & Support */}
-          <div className="group relative bg-gradient-to-br from-base-100 to-base-200/50 rounded-3xl p-8 border border-accent/30 hover:border-accent/30 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 backdrop-blur-sm">
+          <div className="group relative bg-gradient-to-br from-base-100 to-base-200/50 rounded-3xl p-6 lg:p-8 border border-accent/30 hover:border-accent/30 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 backdrop-blur-sm">
             {/* Card Header */}
-            <div className="relative mb-8">
-              <div className="w-16 h-16 bg-accent/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+            <div className="relative mb-6">
+              <div className="w-14 h-14 lg:w-16 lg:h-16 bg-accent/10 rounded-2xl flex items-center justify-center mb-4 lg:mb-6 group-hover:scale-110 transition-transform duration-300">
                 <svg
                   className="w-8 h-8 text-accent"
                   fill="none"
@@ -208,7 +208,7 @@ const Features = () => {
                   />
                 </svg>
               </div>
-              <h3 className="text-2xl font-bold text-base-content mb-3">
+              <h3 className="text-xl lg:text-2xl font-bold text-base-content mb-2 lg:mb-3">
                 Analytics & Live Support
               </h3>
               <p className="text-base-content/70 leading-relaxed">
@@ -272,17 +272,17 @@ const Features = () => {
         </div>
 
         {/* Bottom CTA Section */}
-        <div className="text-center mt-20">
-          <div className="bg-gradient-to-r from-primary/5 via-secondary/5 to-accent/5 rounded-3xl p-12 border border-base-300/50 backdrop-blur-sm">
-            <h3 className="text-3xl font-bold text-base-content mb-4">
+        <div className="text-center mt-12 lg:mt-16">
+          <div className="bg-gradient-to-r from-primary/5 via-secondary/5 to-accent/5 rounded-3xl p-8 lg:p-12 border border-base-300/50 backdrop-blur-sm">
+            <h3 className="text-2xl lg:text-3xl font-bold text-base-content mb-3 lg:mb-4">
               Ready to Transform Your Website?
             </h3>
-            <p className="text-lg text-base-content/70 mb-8 max-w-2xl mx-auto">
+            <p className="text-base lg:text-lg text-base-content/70 mb-6 lg:mb-8 max-w-2xl mx-auto">
               Join hundreds of businesses already using SiteKick to increase
               their conversion rates and automate customer engagement.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="group btn btn-primary btn-lg text-black rounded-md shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+              <button className="group btn btn-primary btn-lg rounded-md shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
                 <span>Join SiteKick</span>
                 <svg
                   className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform"

@@ -17,15 +17,15 @@ export default function Footer() {
   return (
     <div className="relative">
       {/* Main Footer */}
-      <footer className="relative bg-gradient-to-b from-base-200/50 to-base-300 border-t border-base-300/30">
+      <footer className="relative bg-gradient-to-b  from-base-200/50 to-base-300 border-t border-base-300/30">
         {/* Background decorative elements */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute top-0 left-1/4 w-64 h-64 bg-primary/2 rounded-full blur-3xl"></div>
           <div className="absolute bottom-0 right-1/4 w-48 h-48 bg-secondary/2 rounded-full blur-3xl"></div>
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 ">
             {/* Company Info */}
             <div className="lg:col-span-2">
               <div className="flex items-center  gap-3 mb-6 bg-white w-fit rounded-lg p-4 shadow-lg ">
@@ -41,12 +41,6 @@ export default function Footer() {
                 Transform your website visitors into customers with AI-powered
                 chatbots, lead capture tools, and smart conversion optimization.
               </p>
-              <div className="flex items-center gap-4">
-                <div className="inline-flex items-center gap-2 bg-success/10 text-success px-4 py-2 rounded-full text-sm font-medium border border-success/20">
-                  <span className="w-2 h-2 bg-success rounded-full animate-pulse"></span>
-                  Trusted by 100+ businesses
-                </div>
-              </div>
             </div>
 
             {/* Quick Links */}
@@ -109,19 +103,21 @@ export default function Footer() {
                   <FaInstagram className="w-5 h-5" />
                 </a>
               </div>
+              <div className="flex items-center mt-4 gap-4">
+                <div className="inline-flex items-center gap-2 bg-success/10 text-success px-4 py-2 rounded-full text-sm font-medium border border-success/20">
+                  <span className="w-2 h-2 bg-success rounded-full animate-pulse"></span>
+                  Trusted by 100+ businesses
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </footer>
-
-      {/* Bottom Bar */}
-      <div className="bg-base-300 border-t border-base-300/50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-2">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-base-content/60 text-sm">
               © {currentYear} SiteKick. All rights reserved.
             </p>
-            <div className="flex gap-6 text-sm">
+            <div className="flex md:mr-10 gap-6 text-sm">
               <a
                 href="#privacy"
                 className="text-base-content/60 hover:text-primary transition-colors"
@@ -143,7 +139,9 @@ export default function Footer() {
             </div>
           </div>
         </div>
-      </div>
+      </footer>
+
+      {/* Bottom Bar */}
     </div>
   );
 }
