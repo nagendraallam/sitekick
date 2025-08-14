@@ -32,7 +32,9 @@ export default function Dashboard() {
           <h1 className="text-3xl font-bold text-base-content mb-2">
             Welcome back, {session.user?.name?.split(" ")[0]}!
           </h1>
-          <p className="text-base-content/60">Here's your dashboard overview</p>
+          <p className="text-base-content/60">
+            Here&apos;s your dashboard overview
+          </p>
         </div>
 
         {/* Dashboard content will be added here */}
@@ -48,4 +50,3 @@ export default function Dashboard() {
     </div>
   );
 }
-
