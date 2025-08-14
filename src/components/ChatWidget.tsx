@@ -221,7 +221,7 @@ export default function ChatWidget({
 
   return (
     <div
-      className={`fixed z-50 ${
+      className={`fixed z-50 flex  justify-end items-end flex-col ${
         positionClasses[finalConfig.position]
       } ${className}`}
     >
@@ -234,10 +234,8 @@ export default function ChatWidget({
           >
             <div className="flex items-start space-x-3">
               <div className="avatar">
-                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-blue-400 to-purple-500 flex items-center justify-center">
-                  <span className="text-white text-xs font-bold">
-                    {finalConfig.aiName[0].toUpperCase()}
-                  </span>
+                <div className="w-8 h-8 rounded-full bg-gradient-to-br flex text-center text-white pt-1 justify-center items-center from-blue-400 to-purple-500">
+                  {finalConfig.aiName[0].toUpperCase()}
                 </div>
               </div>
               <div className="flex-1">
