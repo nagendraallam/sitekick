@@ -4,6 +4,7 @@ import Contact from '@/models/Contact'
 
 const DISCORD_WEBHOOK_URL = 'https://discord.com/api/webhooks/1405617063657209996/_smCluRksLAxn5vQjz6WKpA8IPHNqMR2yq7j_IlUdS2g09o-l-380gsMIXocMKb9hJ4y'
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 async function sendDiscordNotification(contactData: any) {
   try {
     const embed = {
