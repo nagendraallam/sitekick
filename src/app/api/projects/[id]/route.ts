@@ -8,7 +8,7 @@ import mongoose from 'mongoose'
 // GET - Fetch a specific project
 export async function GET(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     const session = await getServerSession(authOptions)
@@ -17,14 +17,16 @@ export async function GET(
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
 
-    if (!mongoose.Types.ObjectId.isValid(params.id)) {
+    const { id } = await params
+
+    if (!mongoose.Types.ObjectId.isValid(id)) {
       return NextResponse.json({ error: 'Invalid project ID' }, { status: 400 })
     }
 
     await connectDB()
     
     const project = await Project.findOne({
-      _id: params.id,
+      _id: id,
       userId: session.user.email
     }).lean()
 
@@ -42,7 +44,7 @@ export async function GET(
 // PUT - Update a project
 export async function PUT(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     const session = await getServerSession(authOptions)
@@ -51,7 +53,9 @@ export async function PUT(
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
 
-    if (!mongoose.Types.ObjectId.isValid(params.id)) {
+    const { id } = await params
+
+    if (!mongoose.Types.ObjectId.isValid(id)) {
       return NextResponse.json({ error: 'Invalid project ID' }, { status: 400 })
     }
 
@@ -71,7 +75,7 @@ export async function PUT(
     const existingProject = await Project.findOne({
       userId: session.user.email,
       name: name.trim(),
-      _id: { $ne: params.id }
+      _id: { $ne: id }
     })
 
     if (existingProject) {
@@ -82,7 +86,7 @@ export async function PUT(
     }
 
     const project = await Project.findOneAndUpdate(
-      { _id: params.id, userId: session.user.email },
+      { _id: id, userId: session.user.email },
       {
         name: name.trim(),
         url: url.trim().toLowerCase(),
@@ -108,7 +112,7 @@ export async function PUT(
 // DELETE - Delete a project
 export async function DELETE(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     const session = await getServerSession(authOptions)
@@ -117,14 +121,16 @@ export async function DELETE(
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
 
-    if (!mongoose.Types.ObjectId.isValid(params.id)) {
+    const { id } = await params
+
+    if (!mongoose.Types.ObjectId.isValid(id)) {
       return NextResponse.json({ error: 'Invalid project ID' }, { status: 400 })
     }
 
     await connectDB()
     
     const project = await Project.findOneAndDelete({
-      _id: params.id,
+      _id: id,
       userId: session.user.email
     })
 

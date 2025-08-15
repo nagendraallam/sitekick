@@ -21,7 +21,11 @@ export default function ProjectEditModal({
     url: "",
     aiName: "",
     description: "",
-    position: "bottom-right" as const,
+    position: "bottom-right" as
+      | "bottom-right"
+      | "bottom-left"
+      | "top-right"
+      | "top-left",
     isActive: true,
   });
   const [isLoading, setIsLoading] = useState(false);
@@ -34,7 +38,11 @@ export default function ProjectEditModal({
         url: project.url || "",
         aiName: project.aiName || "",
         description: project.description || "",
-        position: project.position || "bottom-right",
+        position: project.position as
+          | "bottom-right"
+          | "bottom-left"
+          | "top-right"
+          | "top-left",
         isActive: project.isActive !== undefined ? project.isActive : true,
       });
     }
