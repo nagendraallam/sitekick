@@ -57,6 +57,7 @@ export async function POST(request: NextRequest) {
 }
 
 // Simple AI response generation (replace with your actual AI integration)
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 async function generateAIResponse(message: string, project: any): Promise<string> {
   // Simulate processing time
   await new Promise(resolve => setTimeout(resolve, 500 + Math.random() * 1500));
@@ -114,6 +115,7 @@ async function storeConversation(
   sessionId: string,
   userMessage: string,
   aiResponse: string,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   userInfo?: any
 ) {
   // TODO: Implement conversation storage
