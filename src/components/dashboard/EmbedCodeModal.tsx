@@ -28,7 +28,7 @@ export default function EmbedCodeModal({
 <script>
   window.SiteKickConfig = ${JSON.stringify(config, null, 2)};
 </script>
-<script async src="https://ai-chatbot.sitekick.com/embed.js"></script>
+<script async src="${window.location.origin}/embed.js"></script>
 <!-- End SiteKick AI Chatbot -->`;
   };
 
