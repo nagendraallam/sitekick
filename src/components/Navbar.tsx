@@ -14,7 +14,7 @@ export default function Navbar() {
       {" "}
       <div className="flex justify-between items-center">
         {/* Logo */}
-        <a className="text-xl font-black hover:bg-transparent">
+        <a href="/" className="text-xl font-black hover:bg-transparent">
           <Image
             src="/l.png"
             alt="SiteKick Logo"

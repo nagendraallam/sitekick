@@ -23,12 +23,12 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: "images/favicon.ico",
-        type: "image/x-icon",
+        url: "images/dog.png",
+        type: "image/png",
       },
     ],
-    shortcut: "images/favicon.ico",
-    apple: "images/favicon.ico",
+    shortcut: "images/dog.png",
+    apple: "images/dog.png",
   },
 };
 
@@ -40,8 +40,8 @@ export default function RootLayout({
   return (
     <html lang="en" data-theme="corporate">
       <head>
-        <link rel="icon" href="images/favicon.ico" />
-        <link rel="icon" href="images/favicon.ico" />
+        <link rel="icon" href="images/dog.png" />
+        <link rel="icon" href="images/dog.png" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}
