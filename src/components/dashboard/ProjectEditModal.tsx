@@ -131,7 +131,7 @@ export default function ProjectEditModal({
                 <div>
                   <span className="label-text font-medium">Active</span>
                   <p className="text-xs text-base-content/60">
-                    When disabled, the chatbot won't appear on your website
+                    When disabled, the chatbot won&apos;t appear on your website
                   </p>
                 </div>
               </label>

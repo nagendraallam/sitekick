@@ -14,7 +14,7 @@ export default function Navbar() {
       {" "}
       <div className="flex justify-between items-center">
         {/* Logo */}
-        <a href="/" className="text-xl font-black hover:bg-transparent">
+        <Link href="/" className="text-xl font-black hover:bg-transparent">
           <Image
             src="/l.png"
             alt="SiteKick Logo"
@@ -22,7 +22,7 @@ export default function Navbar() {
             height={50}
             className=" w-auto"
           />
-        </a>
+        </Link>
       </div>
       <div className="flex justify-end items-center gap-2">
         {status === "loading" ? (

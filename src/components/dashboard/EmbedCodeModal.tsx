@@ -58,7 +58,8 @@ export default function EmbedCodeModal({
           <div>
             <h3 className="font-bold text-lg">Embed Code</h3>
             <p className="text-sm text-base-content/60 mt-1">
-              Copy and paste this code into your website's HTML to add SiteKick
+              Copy and paste this code into your website&apos;s HTML to add
+              SiteKick
             </p>
           </div>
           <button
