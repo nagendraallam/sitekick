@@ -637,7 +637,7 @@
             this.config.branding.showPoweredBy
               ? `
             <div class="sitekick-branding">
-              Powered by <a href="https://sitekick.com" target="_blank">${this.config.branding.customBranding}</a>
+              Powered by <a href="https://sitekick.app" target="_blank">${this.config.branding.customBranding}</a>
             </div>
           `
               : ""
