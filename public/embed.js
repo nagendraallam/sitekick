@@ -144,7 +144,7 @@
           border-radius: 12px;
           box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
           padding: 16px;
-          max-width: 280px;
+          width: 280px;
           margin-bottom: 16px;
           border: 1px solid #e5e7eb;
           animation: sitekick-popup-bounce 0.5s ease-out;
