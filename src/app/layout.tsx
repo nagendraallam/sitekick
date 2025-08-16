@@ -42,15 +42,30 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="images/favicon.ico" />
         <link rel="icon" href="images/favicon.ico" />
+
+        {/* SiteKick AI Chatbot */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.SiteKickConfig = {
+                "projectId": "68a0b1bbc93da7356cf02bad",
+                "aiName": "Luna",
+                "position": "bottom-right",
+                "isActive": true
+              };
+            `,
+          }}
+        />
+        <script async src="https://www.sitekick.app/embed.js" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}
       >
         <SessionProvider>
           <Navbar />
+
           <main className="flex-1">{children}</main>
           <Footer />
-          <ChatWidget />
         </SessionProvider>
       </body>
     </html>

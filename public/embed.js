@@ -229,12 +229,12 @@
         
         .sitekick-position-bottom-right .sitekick-chat-window,
         .sitekick-position-bottom-left .sitekick-chat-window {
-          bottom: 80px;
+          bottom: 20px;
         }
         
         .sitekick-position-top-right .sitekick-chat-window,
         .sitekick-position-top-left .sitekick-chat-window {
-          top: 80px;
+          top: 20px;
         }
         
         .sitekick-position-bottom-right .sitekick-chat-window,

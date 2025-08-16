@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import connectDB from '@/lib/db';
 import Project from '@/models/Project';
+import { HfInference } from '@huggingface/inference';
 
 export async function POST(request: NextRequest) {
   try {
@@ -33,8 +34,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // TODO: Here you would integrate with your AI service (OpenAI, Claude, etc.)
-    // For now, we'll return a simulated response
+    // Real AI integration using Hugging Face (FREE!)
     const aiResponse = await generateAIResponse(message, project);
 
     // TODO: Store the conversation in your database for analytics/training
@@ -56,53 +56,72 @@ export async function POST(request: NextRequest) {
   }
 }
 
-// Simple AI response generation (replace with your actual AI integration)
+// AI response generation using Hugging Face (FREE!)
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 async function generateAIResponse(message: string, project: any): Promise<string> {
-  // Simulate processing time
-  await new Promise(resolve => setTimeout(resolve, 500 + Math.random() * 1500));
-  
-  const lowerMessage = message.toLowerCase();
-  
-  // Simple keyword-based responses
-  if (lowerMessage.includes('hello') || lowerMessage.includes('hi') || lowerMessage.includes('hey')) {
-    return `Hello! I'm ${project.aiName}, and I'm here to help you. What can I assist you with today?`;
+  try {
+    console.log('Generating AI response...');
+    console.log(process.env.HUGGINGFACE_API_TOKEN);
+    // Initialize Hugging Face client (free tier)
+    const hf = new HfInference(process.env.HUGGINGFACE_API_TOKEN);
+    
+    // Create a context-aware system prompt
+    const systemPrompt = `You are ${project.aiName}, a helpful AI assistant for ${project.name}. ${project.description ? `Here's what we do: ${project.description}` : ''} 
+
+Your role is to:
+- Be friendly, professional, and helpful
+- Answer questions about our services and products  
+- Help visitors understand what we offer
+- Provide helpful information and guide users appropriately
+- Sound natural and conversational, like a real human customer service representative
+
+Keep responses concise (2-3 sentences max) and always stay in character as ${project.aiName}.`;
+
+    // Use SmolLM3-3B - much better for chat conversations!
+    const messages = [
+      {
+        "role": "system", 
+        "content": `/no_think\n\n${systemPrompt}`
+      },
+      {
+        "role": "user", 
+        "content": message
+      }
+    ];
+
+    const result = await hf.chatCompletion({
+      model: 'HuggingFaceTB/SmolLM3-3B',
+      messages: messages,
+      max_tokens: 150,
+      temperature: 0.6,
+      top_p: 0.95
+    });
+
+    // Extract and clean the response from chat completion
+    let response = result.choices?.[0]?.message?.content?.trim() || '';
+    
+    // Clean up any unwanted prefixes or artifacts
+    response = response.replace(/^(Assistant:|AI:|Bot:)/i, '').trim();
+    
+    // Fallback if response is empty or too short
+    if (!response || response.length < 5) {
+      return `Hi! I'm ${project.aiName} from ${project.name}. I'd be happy to help you with any questions you have about our services. What can I assist you with today?`;
+    }
+
+    return response;
+
+  } catch (error) {
+    console.error('Error generating AI response:', error);
+    
+    // Fallback to basic responses if AI fails
+    const fallbackResponses = [
+      `Hi! I'm ${project.aiName} from ${project.name}. Thanks for reaching out! How can I help you today?`,
+      `Hello! I'm ${project.aiName}, and I'm here to assist you with any questions about ${project.name}. What would you like to know?`,
+      `Thanks for your message! I'm ${project.aiName} and I'd be happy to help you learn more about what we do at ${project.name}. What can I assist you with?`
+    ];
+    
+    return fallbackResponses[Math.floor(Math.random() * fallbackResponses.length)];
   }
-  
-  if (lowerMessage.includes('pricing') || lowerMessage.includes('cost') || lowerMessage.includes('price')) {
-    return "I'd be happy to help you with pricing information! Our plans are designed to be flexible and affordable. Would you like me to connect you with someone who can provide detailed pricing for your specific needs?";
-  }
-  
-  if (lowerMessage.includes('feature') || lowerMessage.includes('what') || lowerMessage.includes('how')) {
-    return "Great question! Our platform offers many powerful features including AI chatbots, automated responses, analytics, and seamless integrations. What specific feature are you most interested in learning about?";
-  }
-  
-  if (lowerMessage.includes('contact') || lowerMessage.includes('support') || lowerMessage.includes('help')) {
-    return "I'm here to help! If you need to speak with our support team directly, you can reach us through our contact form or I can help answer your questions right here. What would you prefer?";
-  }
-  
-  if (lowerMessage.includes('demo') || lowerMessage.includes('try') || lowerMessage.includes('test')) {
-    return "I'd love to show you a demo! You're actually experiencing our chat widget right now. Would you like to see more of our features or schedule a personalized demo with our team?";
-  }
-  
-  if (lowerMessage.includes('thank') || lowerMessage.includes('thanks')) {
-    return "You're very welcome! I'm glad I could help. Is there anything else you'd like to know about our services?";
-  }
-  
-  if (lowerMessage.includes('bye') || lowerMessage.includes('goodbye')) {
-    return "Thank you for chatting with me! Feel free to reach out anytime if you have more questions. Have a great day!";
-  }
-  
-  // Default responses
-  const defaultResponses = [
-    `Thanks for your message! I'm ${project.aiName} and I'm here to help. Could you tell me more about what you're looking for?`,
-    "That's an interesting question! I'd be happy to help you with that. Let me provide you with some information.",
-    "I appreciate you reaching out! Our team is dedicated to helping businesses like yours succeed. What specific area would you like to explore?",
-    "Great to hear from you! I'm here to answer any questions you might have about our services. What would you like to know more about?",
-    "Thanks for your interest! I'd love to learn more about your business needs so I can provide the most relevant information. What brings you here today?"
-  ];
-  
-  return defaultResponses[Math.floor(Math.random() * defaultResponses.length)];
 }
 
 function generateSessionId(): string {

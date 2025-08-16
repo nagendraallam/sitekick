@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@auth/core": "^0.34.2",
+    "@huggingface/inference": "^4.7.1",
     "@types/mongoose": "^5.11.96",
     "mongoose": "^8.17.1",
     "next": "15.4.6",

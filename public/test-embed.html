@@ -176,38 +176,20 @@
         </div>
     </div>
 
-    <!-- SiteKick Configuration -->
-    <script>
-        window.SiteKickConfig = {
-            projectId: "demo-project-123",
-            aiName: "Luna",
-            position: "bottom-right",
-            isActive: true,
-            primaryColor: "#4f46e5",
-            accentColor: "#7c3aed",
-            welcomeMessage: "Hi there! I'm Luna, your AI assistant. I'm here to help you learn about SiteKick's chat widget features. What would you like to know?",
-            popupMessage: "👋 Hey! I'm Luna, your AI assistant. Got any questions about our chat widget?",
-            popupDelay: 3000,
-            size: "medium",
-            branding: {
-                showPoweredBy: true,
-                customBranding: "SiteKick AI"
-            }
-        };
-        
-        // Display configuration on page
-        document.getElementById('config-display').textContent = JSON.stringify(window.SiteKickConfig, null, 2);
-        
-        // Helper function to programmatically open chat
-        function openChat() {
-            // This would be called by the embed script
-            if (window.SiteKickWidget) {
-                window.SiteKickWidget.openChat();
-            }
-        }
-    </script>
+ 
+    <!-- SiteKick AI Chatbot -->
+<script>
+    window.SiteKickConfig = {
+    "projectId": "68a0af7036a6aec41d898238",
+    "aiName": "James",
+    "position": "bottom-right",
+    "isActive": true
+  };
+  </script>
+  <script async src="http://localhost:3000/embed.js"></script>
+  <!-- End SiteKick AI Chatbot -->
     
     <!-- SiteKick Chat Widget Embed Script -->
-    <script async src="./embed.js"></script>
+    <!-- <script async src="./embed.js"></script> -->
 </body>
 </html>
