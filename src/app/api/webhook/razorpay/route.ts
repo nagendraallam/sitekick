@@ -67,6 +67,7 @@ export async function POST(request: NextRequest) {
   }
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 async function handleSubscriptionActivated(subscriptionData: any) {
   try {
     const subscription = await Subscription.findOne({
@@ -97,6 +98,7 @@ async function handleSubscriptionActivated(subscriptionData: any) {
   }
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 async function handleSubscriptionCharged(paymentData: any, subscriptionData: any) {
   try {
     const subscription = await Subscription.findOne({
@@ -121,6 +123,7 @@ async function handleSubscriptionCharged(paymentData: any, subscriptionData: any
   }
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 async function handleSubscriptionCompleted(subscriptionData: any) {
   try {
     const subscription = await Subscription.findOne({
@@ -150,6 +153,7 @@ async function handleSubscriptionCompleted(subscriptionData: any) {
   }
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 async function handleSubscriptionCancelled(subscriptionData: any) {
   try {
     const subscription = await Subscription.findOne({
@@ -180,6 +184,7 @@ async function handleSubscriptionCancelled(subscriptionData: any) {
   }
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 async function handleSubscriptionPausedOrHalted(subscriptionData: any) {
   try {
     const subscription = await Subscription.findOne({
@@ -208,6 +213,7 @@ async function handleSubscriptionPausedOrHalted(subscriptionData: any) {
   }
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 async function handleSubscriptionResumed(subscriptionData: any) {
   try {
     const subscription = await Subscription.findOne({

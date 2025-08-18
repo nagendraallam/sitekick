@@ -53,6 +53,7 @@ export function isPremiumUser(permissions: UserPermission[]): boolean {
   return permissions.includes(UserPermission.PREMIUM_USER) || permissions.includes(UserPermission.ADMIN)
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function isSubscriptionActive(subscription: any): boolean {
   if (!subscription) return false
   
@@ -63,6 +64,7 @@ export function isSubscriptionActive(subscription: any): boolean {
   )
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function getDaysUntilExpiry(subscription: any): number {
   if (!subscription || subscription.status !== 'active') return 0
   
