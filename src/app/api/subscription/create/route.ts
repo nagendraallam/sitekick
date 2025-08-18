@@ -5,14 +5,14 @@ import connectDB from '@/lib/db'
 import User from '@/models/User'
 import Subscription from '@/models/Subscription'
 import Razorpay from 'razorpay'
-import { SubscriptionPlan, UserPermission } from '@/types/enums'
+
 
 const razorpay = new Razorpay({
   key_id: process.env.RAZORPAY_KEY_ID!,
   key_secret: process.env.RAZORPAY_KEY_SECRET!,
 })
 
-export async function POST(request: NextRequest) {
+export async function POST() {
   try {
     const session = await getServerSession(authOptions)
     
@@ -65,10 +65,11 @@ export async function POST(request: NextRequest) {
       total_count: 12, // 12 months
       addons: [],
       notes: {
-        user_id: user._id.toString(),
+        user_id: (user._id as string).toString(),
         plan: 'paid_plan_99_eur'
       }
-    })
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    } as any)
 
     // Calculate period dates (monthly subscription)
     const currentPeriodStart = new Date()
@@ -78,10 +79,12 @@ export async function POST(request: NextRequest) {
     // Create subscription record in database
     const newSubscription = new Subscription({
       userId: user._id,
-      razorpaySubscriptionId: subscription.id,
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      razorpaySubscriptionId: (subscription as any).id,
       razorpayPlanId: process.env.RAZORPAY_PLAN_ID!,
       razorpayCustomerId: customerId,
-      status: subscription.status,
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      status: (subscription as any).status,
       planName: 'Paid Plan - €99/month',
       amount: 9900, // €99 in cents
       currency: 'EUR',
@@ -102,9 +105,12 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({
       success: true,
       subscription: {
-        id: subscription.id,
-        status: subscription.status,
-        short_url: subscription.short_url,
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        id: (subscription as any).id,
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        status: (subscription as any).status,
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        short_url: (subscription as any).short_url,
         amount: 9900,
         currency: 'EUR',
         plan_name: 'Paid Plan - €99/month'
