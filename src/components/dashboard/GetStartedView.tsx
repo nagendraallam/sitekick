@@ -1,5 +1,7 @@
 "use client";
 
+import SubscriptionButton from "./SubscriptionButton";
+
 interface GetStartedViewProps {
   onCreateProject: () => void;
 }
@@ -161,17 +163,23 @@ export default function GetStartedView({
         </div>
 
         {/* CTA Section */}
-        <div className="bg-base-200 rounded-2xl p-8 space-y-4">
-          <h3 className="text-2xl font-bold text-base-content">
-            Ready to Get Started?
-          </h3>
-          <p className="text-base-content/60">
-            Join thousands of websites using AI chatbots to improve customer
-            experience.
-          </p>
-          <button onClick={onCreateProject} className="btn btn-primary btn-lg">
-            Create Your First Project
-          </button>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="bg-base-200 rounded-2xl p-8 space-y-4">
+            <h3 className="text-2xl font-bold text-base-content">
+              Ready to Get Started?
+            </h3>
+            <p className="text-base-content/60">
+              Join thousands of websites using AI chatbots to improve customer
+              experience.
+            </p>
+            <button onClick={onCreateProject} className="btn btn-primary btn-lg">
+              Create Your First Project
+            </button>
+          </div>
+          
+          <div>
+            <SubscriptionButton />
+          </div>
         </div>
       </div>
     </div>

@@ -9,6 +9,7 @@ import ProjectsTable from "@/components/dashboard/ProjectsTable";
 import ProjectCreationModal from "@/components/dashboard/ProjectCreationModal";
 import ProjectEditModal from "@/components/dashboard/ProjectEditModal";
 import EmbedCodeModal from "@/components/dashboard/EmbedCodeModal";
+import SubscriptionButton from "@/components/dashboard/SubscriptionButton";
 
 export default function Dashboard() {
   const { data: session, status } = useSession();
@@ -114,13 +115,20 @@ export default function Dashboard() {
               </p>
             </div>
 
-            <ProjectsTable
-              projects={projects}
-              onEdit={handleEditProject}
-              onDelete={handleDeleteProject}
-              onShowCode={handleShowCode}
-              onCreateNew={handleCreateNew}
-            />
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+              <div className="lg:col-span-2">
+                <ProjectsTable
+                  projects={projects}
+                  onEdit={handleEditProject}
+                  onDelete={handleDeleteProject}
+                  onShowCode={handleShowCode}
+                  onCreateNew={handleCreateNew}
+                />
+              </div>
+              <div className="lg:col-span-1">
+                <SubscriptionButton />
+              </div>
+            </div>
           </div>
         ) : (
           <GetStartedView onCreateProject={handleCreateNew} />

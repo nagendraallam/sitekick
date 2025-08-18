@@ -1,5 +1,5 @@
 import mongoose, { Document, Model, Schema } from 'mongoose'
-import { UserPermission } from '@/types/enums'
+import { UserPermission, SubscriptionPlan } from '@/types/enums'
 
 export interface IUser extends Document {
   email: string
@@ -7,6 +7,9 @@ export interface IUser extends Document {
   image?: string
   googleId?: string
   permissions: UserPermission[]
+  subscriptionPlan: SubscriptionPlan
+  subscriptionId?: mongoose.Types.ObjectId
+  razorpayCustomerId?: string
   createdAt: Date
   updatedAt: Date
 }
@@ -38,6 +41,20 @@ const userSchema = new Schema<IUser>(
       type: [String],
       enum: Object.values(UserPermission),
       default: [UserPermission.USER],
+    },
+    subscriptionPlan: {
+      type: String,
+      enum: Object.values(SubscriptionPlan),
+      default: SubscriptionPlan.FREE,
+      index: true,
+    },
+    subscriptionId: {
+      type: Schema.Types.ObjectId,
+      ref: 'Subscription',
+    },
+    razorpayCustomerId: {
+      type: String,
+      index: true,
     },
   },
   {
