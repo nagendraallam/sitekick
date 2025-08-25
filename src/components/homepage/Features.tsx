@@ -22,6 +22,10 @@ const Features = () => {
           <p className="text-xl text-base-content/70 max-w-3xl mx-auto leading-relaxed">
             Our comprehensive AI-powered platform provides all the tools you
             need to transform your website into a conversion machine.
+            <span className="text-primary font-semibold">
+              {" "}
+              Add to any website with just 2 lines of code.
+            </span>
           </p>
         </div>
 
@@ -52,6 +56,10 @@ const Features = () => {
               <p className="text-base-content/70 leading-relaxed">
                 Intelligent chatbots tailored to your business that handle lead
                 qualification, answer FAQs, and manage bookings automatically.
+                <span className="text-primary font-medium">
+                  {" "}
+                  Installs in 30 seconds with 2 lines of code.
+                </span>
               </p>
             </div>
 
@@ -280,6 +288,10 @@ const Features = () => {
             <p className="text-base lg:text-lg text-base-content/70 mb-6 lg:mb-8 max-w-2xl mx-auto">
               Join hundreds of businesses already using SiteKick to increase
               their conversion rates and automate customer engagement.
+              <br />
+              <span className="text-secondary font-semibold">
+                Setup takes just 2 lines of code - no developer required!
+              </span>
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="group btn btn-primary btn-lg rounded-md shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">

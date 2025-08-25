@@ -219,7 +219,7 @@ const Pricing = () => {
               </button>
 
               <p className="text-center text-xs lg:text-sm text-base-content/50">
-                Setup in less than 1 minute
+                Just 2 lines of code - setup in 30 seconds!
               </p>
             </div>
           </div>
@@ -259,8 +259,9 @@ const Pricing = () => {
                   How long does setup take?
                 </h4>
                 <p className="text-xs lg:text-sm text-base-content/70">
-                  Most customers are up and running within 5 minutes! Our AI
-                  handles the heavy lifting, and our team provides white-glove
+                  Most customers are up and running within 30 seconds! Just copy
+                  and paste 2 lines of code into your website. Our AI handles
+                  the heavy lifting, and our team provides white-glove
                   onboarding to ensure everything works perfectly.
                 </p>
               </div>

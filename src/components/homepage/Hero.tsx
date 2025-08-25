@@ -38,13 +38,13 @@ const Hero = () => {
 
             {/* Supporting line */}
             <p className="text-xl leading-relaxed text-base-content/70 max-w-2xl font-medium">
-              SiteKick supercharges your website with AI chatbots,
+              Add AI chatbots to your website in just 2 lines of code.
               <br />
-              lead capture, and smart conversion tools
+              No complex setup, no developer needed.
               <br />
               <span className="text-primary font-semibold">
                 {" "}
-                helping you close more deals while you sleep.
+                Start converting visitors instantly.
               </span>
             </p>
 
@@ -111,8 +111,16 @@ const Hero = () => {
                   />
                 </svg>
               </button>
-              <button className="btn btn-outline rounded-md btn-primary btn-lg hover:scale-105 transition-all duration-300">
-                <span>Learn More</span>
+              <button
+                onClick={() => {
+                  window.open(
+                    "https://calendly.com/nagendra-sitekick/30min",
+                    "_blank"
+                  );
+                }}
+                className="btn btn-outline rounded-md btn-primary btn-lg hover:scale-105 transition-all duration-300"
+              >
+                <span>Book a Demo</span>
               </button>
             </div>
 
